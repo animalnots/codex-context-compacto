@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "codex-context-compacto",
+  "version": "0.1.0",
+  "description": "Keep selected conversation history around a summarized middle in a new, resumable Codex session.",
+  "author": {"name": "Codex Context Compacto contributors"},
+  "license": "MIT",
+  "keywords": ["codex", "context", "compaction", "checkpoint"],
+  "extensions": {
+    "com.openai": {
+      "hooks": "./hooks/hooks.json",
+      "interface": {
+        "displayName": "Codex Context Compacto",
+        "shortDescription": "Preserve head and tail context across compaction.",
+        "longDescription": "Preview retained history, summarize the middle, and create a fresh Codex session without modifying the original. Includes a manual skill and an opt-in PreCompact hook.",
+        "developerName": "Codex Context Compacto contributors",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": "Use Compacto to preview and compact this session, keeping the original intact."
+      }
+    }
+  }
+}

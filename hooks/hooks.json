@@ -1,0 +1,19 @@
+{
+  "description": "Optional context compaction into a new session. Disabled until Compacto config enables it.",
+  "hooks": {
+    "PreCompact": [
+      {
+        "matcher": "manual|auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/precompact.py\"",
+            "commandWindows": "py -3 \"${PLUGIN_ROOT}/hooks/precompact.py\"",
+            "timeout": 480,
+            "statusMessage": "Preparing a Compacto checkpoint"
+          }
+        ]
+      }
+    ]
+  }
+}
